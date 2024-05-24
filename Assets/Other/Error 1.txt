@@ -1,0 +1,323 @@
+CommandInvokationFailure: Gradle build failed. 
+C:/Program Files/Java/jdk1.8.0_181\bin\java.exe -classpath "C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\Tools\gradle\lib\gradle-launcher-4.0.1.jar" org.gradle.launcher.GradleMain "-Dorg.gradle.jvmargs=-Xmx2048m" "assembleRelease"
+
+stderr[
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':transformClassesWithDexForRelease'.
+> com.android.build.api.transform.TransformException: com.android.ide.common.process.ProcessException: java.util.concurrent.ExecutionException: com.android.dex.DexIndexOverflowException: method ID not in [0, 0xffff]: 65536
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED in 38s
+]
+stdout[
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+The setTestClassesDir(File) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use the setTestClassesDirs(FileCollection) method instead.
+The getTestClassesDir() method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use the getTestClassesDirs() method instead.
+The ConfigurableReport.setDestination(Object) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use the method ConfigurableReport.setDestination(File) instead.
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+NDK is missing a "platforms" directory.
+If you are using NDK, verify the ndk.dir is set to a valid NDK directory.  It is currently set to E:\GAME DEVELOP\Android SDK\ndk-bundle.
+If you are not using NDK, unset the NDK variable from ANDROID_NDK_HOME or local.properties to remove this warning.
+
+:preBuild UP-TO-DATE
+:preReleaseBuild UP-TO-DATE
+:checkReleaseManifest
+:preDebugBuild UP-TO-DATE
+:preparePlayServicesAds980Library
+:preparePlayServicesAdsLite980Library
+:preparePlayServicesBase980Library
+:preparePlayServicesBasement980Library
+:preparePlayServicesClearcut980Library
+:preparePlayServicesGass980Library
+:preparePlayServicesLocation980Library
+:preparePlayServicesTasks980Library
+:prepareSupportCompat2520Library
+:prepareSupportCoreUi2520Library
+:prepareSupportCoreUtils2520Library
+:prepareSupportFragment2520Library
+:prepareSupportMediaCompat2520Library
+:prepareSupportV42520Library
+:adcolony-sdk:preBuild UP-TO-DATE
+:adcolony-sdk:preReleaseBuild UP-TO-DATE
+:adcolony-sdk:checkReleaseManifest
+:adcolony-sdk:prepareReleaseDependencies
+:adcolony-sdk:compileReleaseAidl
+:adcolony-sdk:compileReleaseNdk NO-SOURCE
+:adcolony-sdk:compileLint
+:adcolony-sdk:copyReleaseLint NO-SOURCE
+:adcolony-sdk:mergeReleaseShaders
+:adcolony-sdk:compileReleaseShaders
+:adcolony-sdk:generateReleaseAssets
+:adcolony-sdk:mergeReleaseAssets
+:adcolony-sdk:mergeReleaseProguardFiles UP-TO-DATE
+:adcolony-sdk:packageReleaseRenderscript NO-SOURCE
+:adcolony-sdk:compileReleaseRenderscript
+:adcolony-sdk:generateReleaseResValues
+:adcolony-sdk:generateReleaseResources
+:adcolony-sdk:packageReleaseResources
+:adcolony-sdk:processReleaseManifest
+:adcolony-sdk:generateReleaseBuildConfig
+:adcolony-sdk:processReleaseResources
+:adcolony-sdk:generateReleaseSources
+:adcolony-sdk:incrementalReleaseJavaCompilationSafeguard
+:adcolony-sdk:javaPreCompileRelease
+:adcolony-sdk:compileReleaseJavaWithJavac
+:adcolony-sdk:processReleaseJavaRes NO-SOURCE
+:adcolony-sdk:transformResourcesWithMergeJavaResForRelease
+:adcolony-sdk:transformClassesAndResourcesWithSyncLibJarsForRelease
+:adcolony-sdk:mergeReleaseJniLibFolders
+:adcolony-sdk:transformNativeLibsWithMergeJniLibsForRelease
+:adcolony-sdk:transformNativeLibsWithSyncJniLibsForRelease
+:adcolony-sdk:bundleRelease
+:appodeal:preBuild UP-TO-DATE
+:appodeal:preReleaseBuild UP-TO-DATE
+:appodeal:checkReleaseManifest
+:appodeal:prepareReleaseDependencies
+:appodeal:compileReleaseAidl
+:appodeal:compileReleaseNdk NO-SOURCE
+:appodeal:compileLint
+:appodeal:copyReleaseLint NO-SOURCE
+:appodeal:mergeReleaseShaders
+:appodeal:compileReleaseShaders
+:appodeal:generateReleaseAssets
+:appodeal:mergeReleaseAssets
+:appodeal:mergeReleaseProguardFiles UP-TO-DATE
+:appodeal:packageReleaseRenderscript NO-SOURCE
+:appodeal:compileReleaseRenderscript
+:appodeal:generateReleaseResValues
+:appodeal:generateReleaseResources
+:appodeal:packageReleaseResources
+:appodeal:processReleaseManifest
+:appodeal:generateReleaseBuildConfig
+:appodeal:processReleaseResources
+:appodeal:generateReleaseSources
+:appodeal:incrementalReleaseJavaCompilationSafeguard
+:appodeal:javaPreCompileRelease
+:appodeal:compileReleaseJavaWithJavac
+:appodeal:processReleaseJavaRes NO-SOURCE
+:appodeal:transformResourcesWithMergeJavaResForRelease
+:appodeal:transformClassesAndResourcesWithSyncLibJarsForRelease
+:appodeal:mergeReleaseJniLibFolders
+:appodeal:transformNativeLibsWithMergeJniLibsForRelease
+:appodeal:transformNativeLibsWithSyncJniLibsForRelease
+:appodeal:bundleRelease
+:inmobi:preBuild UP-TO-DATE
+:inmobi:preReleaseBuild UP-TO-DATE
+:inmobi:checkReleaseManifest
+:inmobi:prepareReleaseDependencies
+:inmobi:compileReleaseAidl
+:inmobi:compileReleaseNdk NO-SOURCE
+:inmobi:compileLint
+:inmobi:copyReleaseLint NO-SOURCE
+:inmobi:mergeReleaseShaders
+:inmobi:compileReleaseShaders
+:inmobi:generateReleaseAssets
+:inmobi:mergeReleaseAssets
+:inmobi:mergeReleaseProguardFiles UP-TO-DATE
+:inmobi:packageReleaseRenderscript NO-SOURCE
+:inmobi:compileReleaseRenderscript
+:inmobi:generateReleaseResValues
+:inmobi:generateReleaseResources
+:inmobi:packageReleaseResources
+:inmobi:processReleaseManifest
+:inmobi:generateReleaseBuildConfig
+:inmobi:processReleaseResources
+:inmobi:generateReleaseSources
+:inmobi:incrementalReleaseJavaCompilationSafeguard
+:inmobi:javaPreCompileRelease
+:inmobi:compileReleaseJavaWithJavac
+:inmobi:processReleaseJavaRes NO-SOURCE
+:inmobi:transformResourcesWithMergeJavaResForRelease
+:inmobi:transformClassesAndResourcesWithSyncLibJarsForRelease
+:inmobi:mergeReleaseJniLibFolders
+:inmobi:transformNativeLibsWithMergeJniLibsForRelease
+:inmobi:transformNativeLibsWithSyncJniLibsForRelease
+:inmobi:bundleRelease
+:mmedia:preBuild UP-TO-DATE
+:mmedia:preReleaseBuild UP-TO-DATE
+:mmedia:checkReleaseManifest
+:mmedia:prepareReleaseDependencies
+:mmedia:compileReleaseAidl
+:mmedia:compileReleaseNdk NO-SOURCE
+:mmedia:compileLint
+:mmedia:copyReleaseLint NO-SOURCE
+:mmedia:mergeReleaseShaders
+:mmedia:compileReleaseShaders
+:mmedia:generateReleaseAssets
+:mmedia:mergeReleaseAssets
+:mmedia:mergeReleaseProguardFiles UP-TO-DATE
+:mmedia:packageReleaseRenderscript NO-SOURCE
+:mmedia:compileReleaseRenderscript
+:mmedia:generateReleaseResValues
+:mmedia:generateReleaseResources
+:mmedia:packageReleaseResources
+:mmedia:processReleaseManifest
+:mmedia:generateReleaseBuildConfig
+:mmedia:processReleaseResources
+:mmedia:generateReleaseSources
+:mmedia:incrementalReleaseJavaCompilationSafeguard
+:mmedia:javaPreCompileRelease
+:mmedia:compileReleaseJavaWithJavac
+:mmedia:processReleaseJavaRes NO-SOURCE
+:mmedia:transformResourcesWithMergeJavaResForRelease
+:mmedia:transformClassesAndResourcesWithSyncLibJarsForRelease
+:mmedia:mergeReleaseJniLibFolders
+:mmedia:transformNativeLibsWithMergeJniLibsForRelease
+:mmedia:transformNativeLibsWithSyncJniLibsForRelease
+:mmedia:bundleRelease
+:mobvista_alphab:preBuild UP-TO-DATE
+:mobvista_alphab:preReleaseBuild UP-TO-DATE
+:mobvista_alphab:checkReleaseManifest
+:mobvista_alphab:prepareReleaseDependencies
+:mobvista_alphab:compileReleaseAidl
+:mobvista_alphab:compileReleaseNdk NO-SOURCE
+:mobvista_alphab:compileLint
+:mobvista_alphab:copyReleaseLint NO-SOURCE
+:mobvista_alphab:mergeReleaseShaders
+:mobvista_alphab:compileReleaseShaders
+:mobvista_alphab:generateReleaseAssets
+:mobvista_alphab:mergeReleaseAssets
+:mobvista_alphab:mergeReleaseProguardFiles UP-TO-DATE
+:mobvista_alphab:packageReleaseRenderscript NO-SOURCE
+:mobvista_alphab:compileReleaseRenderscript
+:mobvista_alphab:generateReleaseResValues
+:mobvista_alphab:generateReleaseResources
+:mobvista_alphab:packageReleaseResources
+:mobvista_alphab:processReleaseManifest
+:mobvista_alphab:generateReleaseBuildConfig
+:mobvista_alphab:processReleaseResources
+:mobvista_alphab:generateReleaseSources
+:mobvista_alphab:incrementalReleaseJavaCompilationSafeguard
+:mobvista_alphab:javaPreCompileRelease
+:mobvista_alphab:compileReleaseJavaWithJavac
+:mobvista_alphab:processReleaseJavaRes NO-SOURCE
+:mobvista_alphab:transformResourcesWithMergeJavaResForRelease
+:mobvista_alphab:transformClassesAndResourcesWithSyncLibJarsForRelease
+:mobvista_alphab:mergeReleaseJniLibFolders
+:mobvista_alphab:transformNativeLibsWithMergeJniLibsForRelease
+:mobvista_alphab:transformNativeLibsWithSyncJniLibsForRelease
+:mobvista_alphab:bundleRelease
+:mobvista_appwall:preBuild UP-TO-DATE
+:mobvista_appwall:preReleaseBuild UP-TO-DATE
+:mobvista_appwall:checkReleaseManifest
+:mobvista_appwall:prepareReleaseDependencies
+:mobvista_appwall:compileReleaseAidl
+:mobvista_appwall:compileReleaseNdk NO-SOURCE
+:mobvista_appwall:compileLint
+:mobvista_appwall:copyReleaseLint NO-SOURCE
+:mobvista_appwall:mergeReleaseShaders
+:mobvista_appwall:compileReleaseShaders
+:mobvista_appwall:generateReleaseAssets
+:mobvista_appwall:mergeReleaseAssets
+:mobvista_appwall:mergeReleaseProguardFiles UP-TO-DATE
+:mobvista_appwall:packageReleaseRenderscript NO-SOURCE
+:mobvista_appwall:compileReleaseRenderscript
+:mobvista_appwall:generateReleaseResValues
+:mobvista_appwall:generateReleaseResources
+:mobvista_appwall:packageReleaseResources
+:mobvista_appwall:processReleaseManifest
+:mobvista_appwall:generateReleaseBuildConfig
+:mobvista_appwall:processReleaseResources
+:mobvista_appwall:generateReleaseSources
+:mobvista_appwall:incrementalReleaseJavaCompilationSafeguard
+:mobvista_appwall:javaPreCompileRelease
+:mobvista_appwall:compileReleaseJavaWithJavac
+:mobvista_appwall:processReleaseJavaRes NO-SOURCE
+:mobvista_appwall:transformResourcesWithMergeJavaResForRelease
+:mobvista_appwall:transformClassesAndResourcesWithSyncLibJarsForRelease
+:mobvista_appwall:mergeReleaseJniLibFolders
+:mobvista_appwall:transformNativeLibsWithMergeJniLibsForRelease
+:mobvista_appwall:transformNativeLibsWithSyncJniLibsForRelease
+:mobvista_appwall:bundleRelease
+:mobvista_appwallext:preBuild UP-TO-DATE
+:mobvista_appwallext:preReleaseBuild UP-TO-DATE
+:mobvista_appwallext:checkReleaseManifest
+:mobvista_appwallext:prepareReleaseDependencies
+:mob<message truncated>
