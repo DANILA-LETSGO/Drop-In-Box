@@ -9,8 +9,8 @@ namespace YG
     {
         public enum CursorVisible
         {
-            [InspectorName("Show Cursor")] Show,
-            [InspectorName("Hide Cursor")] Hide
+            Show,
+            Hide
         };
 
         [Serializable]

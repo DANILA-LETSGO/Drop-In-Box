@@ -88,8 +88,9 @@ namespace YG
                 rawImage.texture = texture;
 
                 byte[] bytes = texture.EncodeToJPG();
-
-                File.WriteAllBytes(Application.persistentDataPath + "LoadImage.jpg", bytes);
+#if UNITY_EDITOR
+                System.IO.File.WriteAllBytes(Application.persistentDataPath + "LoadImage.jpg", bytes);
+#endif
             }
 
             rawImage.enabled = true;

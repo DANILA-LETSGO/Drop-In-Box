@@ -1,5 +1,4 @@
 using System.IO;
-using System.IO.Compression;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 
@@ -37,7 +36,7 @@ namespace YG.Insides
 
                 void Archiving()
                 {
-                    ZipFile.CreateFromDirectory(patch, patch + number + ".zip");
+                    //ZipFile.CreateFromDirectory(patch, patch + number + ".zip");
                 }
             }
         }
