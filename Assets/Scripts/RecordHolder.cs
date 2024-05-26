@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class RecordHolder : MonoBehaviour {
 
@@ -200,6 +201,26 @@ public class RecordHolder : MonoBehaviour {
 			} else {
 				RecordType_Endless = Score.countBalls;
 			}
+
+#if UNITY_WEBGL
+            var currentScore = Score.countBalls;
+
+            List<int> records = new List<int>()
+            {
+                RecordType_1,
+                RecordType_2,
+                RecordType_3,
+                RecordType_Endless
+            };
+
+            var maxValue = records.Max();
+            if (maxValue < currentScore)
+            {
+                YG.YandexGame.NewLeaderboardScores("maxScore", currentScore);
+            }
+#endif
         }
+
+
     }
 }
