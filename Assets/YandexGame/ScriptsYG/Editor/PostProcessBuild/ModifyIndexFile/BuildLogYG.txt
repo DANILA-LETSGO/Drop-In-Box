@@ -1,2 +1,2 @@
 Build path: D:/GAME DEVELOP/Drop-In-Box 2020/Build/WGL 2020
-Build number: 16
+Build number: 18
