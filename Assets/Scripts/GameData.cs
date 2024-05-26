@@ -6,14 +6,23 @@ using System;
 [Serializable]
 public class GameData
 {
-    public int record;
     public int countBalls;
     public int indexLastPlayedLevel;
     public int multiplierPrice;
+    public int recordType_1;
+    public int recordType_2;
+    public int recordType_3;
+    public int recordType_Endless;
     public bool isOpenEndless;
     public bool isAccessEndless;
     public List<bool> isOpenLevels = new List<bool>();
     public List<bool> isAccessLevels = new List<bool>();
+
+   
+    public GameData()
+    {
+        multiplierPrice = 1;
+    }
 
     public static GameData Instance
     {

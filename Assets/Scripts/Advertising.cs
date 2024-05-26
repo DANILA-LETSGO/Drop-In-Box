@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-#if UNITY_ANDROID
-using AppodealAds.Unity.Api;
-using AppodealAds.Unity.Common;
+#if UNITY_ANDROID && UNITY_APPODEAL
+//using AppodealAds.Unity.Api;
+//using AppodealAds.Unity.Common;
 #endif
 
 public class Advertising : MonoBehaviour
@@ -13,7 +13,7 @@ public class Advertising : MonoBehaviour
 
 	void Start()
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID && UNITY_APPODEAL
 		Appodeal.disableNetwork("inmobi");
 		Appodeal.disableNetwork("yandex");
 
@@ -28,7 +28,7 @@ public class Advertising : MonoBehaviour
 		countGameSessions++;
 		if (countGameSessions > 1)
 		{
-#if UNITY_ANDROID
+#if UNITY_ANDROID && UNITY_APPODEAL
 			if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
 			{
 				Appodeal.show(Appodeal.REWARDED_VIDEO);

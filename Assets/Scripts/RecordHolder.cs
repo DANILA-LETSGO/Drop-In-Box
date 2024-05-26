@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class RecordHolder : MonoBehaviour {
 
-    public static int recordType_1 {
+    public static int RecordType_1
+    {
+#if UNITY_ANDROID
         get
         {
             if (!PlayerPrefs.HasKey("record_1"))
@@ -20,8 +22,27 @@ public class RecordHolder : MonoBehaviour {
             PlayerPrefs.SetInt("record_1", value);
             PlayerPrefs.Save();
         }
+#endif
+
+#if UNITY_WEBGL
+        get
+        {
+            if (GameData.Instance != null)
+                return GameData.Instance.recordType_1;
+            else
+                return 0;
+        }
+        set
+        {
+            GameData.Instance.recordType_1 = value;
+            GameData.Instance.Save();
+        }
+#endif
     }
-    public static int recordType_2 {
+
+    public static int RecordType_2
+    {
+#if UNITY_ANDROID
         get
         {
             if (!PlayerPrefs.HasKey("record_2"))
@@ -35,9 +56,27 @@ public class RecordHolder : MonoBehaviour {
             PlayerPrefs.SetInt("record_2", value);
             PlayerPrefs.Save();
         }
+#endif
+
+#if UNITY_WEBGL
+        get
+        {
+            if (GameData.Instance != null)
+                return GameData.Instance.recordType_2;
+            else
+                return 0;
+        }
+        set
+        {
+            GameData.Instance.recordType_2 = value;
+            GameData.Instance.Save();
+        }
+#endif
     }
-    public static int recordType_3
+
+    public static int RecordType_3
     {
+#if UNITY_ANDROID
         get
         {
             if (!PlayerPrefs.HasKey("record_3"))
@@ -51,9 +90,27 @@ public class RecordHolder : MonoBehaviour {
             PlayerPrefs.SetInt("record_3", value);
             PlayerPrefs.Save();
         }
+#endif
+
+#if UNITY_WEBGL
+        get
+        {
+            if (GameData.Instance != null)
+                return GameData.Instance.recordType_3;
+            else
+                return 0;
+        }
+        set
+        {
+            GameData.Instance.recordType_3 = value;
+            GameData.Instance.Save();
+        }
+#endif
     }
-    public static int recordType_Endless
+
+    public static int RecordType_Endless
     {
+#if UNITY_ANDROID
         get
         {
             if (!PlayerPrefs.HasKey("record_endless"))
@@ -67,6 +124,23 @@ public class RecordHolder : MonoBehaviour {
             PlayerPrefs.SetInt("record_endless", value);
             PlayerPrefs.Save();
         }
+#endif
+
+#if UNITY_WEBGL
+        get
+        {
+            if (GameData.Instance != null)
+                return GameData.Instance.recordType_Endless;
+            else
+                return 0;
+        }
+        set
+        {
+            GameData.Instance.recordType_Endless = value;
+            GameData.Instance.Save();
+        }
+#endif
+
     }
 
     Text txtRecord;
@@ -86,19 +160,19 @@ public class RecordHolder : MonoBehaviour {
 			indexMap = int.Parse(sceneName.Replace("Level ", ""));
             if (indexMap <= 5 )
             {
-                currentRecord = recordType_1;
+                currentRecord = RecordType_1;
             }
             else if (indexMap <= 10)
             {
-                currentRecord = recordType_2;
+                currentRecord = RecordType_2;
             }
             else
             {
-                currentRecord = recordType_3;
+                currentRecord = RecordType_3;
             }
         }
         else {
-            currentRecord = recordType_Endless;
+            currentRecord = RecordType_Endless;
         }
            
     }
@@ -117,14 +191,14 @@ public class RecordHolder : MonoBehaviour {
 			if (SceneManager.GetActiveScene ().name != "Level Endless") {
 				int indexMap = int.Parse (SceneManager.GetActiveScene ().name.Replace ("Level ", ""));
 				if (indexMap <= 5) {
-					recordType_1 = Score.countBalls;
+					RecordType_1 = Score.countBalls;
 				} else if (indexMap <= 10) {
-					recordType_2 = Score.countBalls;
+					RecordType_2 = Score.countBalls;
 				} else {
-					recordType_3 = Score.countBalls;
+					RecordType_3 = Score.countBalls;
 				}
 			} else {
-				recordType_Endless = Score.countBalls;
+				RecordType_Endless = Score.countBalls;
 			}
         }
     }

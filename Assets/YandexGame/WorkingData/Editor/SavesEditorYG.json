@@ -1,5 +1,5 @@
 {
-    "idSave": 17,
+    "idSave": 35,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -11,9 +11,15 @@
         false
     ],
     "gameData": {
-        "record": 0,
-        "countBalls": 58,
-        "indexLastPlayedLevel": 1,
+        "countBalls": 50,
+        "indexLastPlayedLevel": 0,
+        "multiplierPrice": 2,
+        "recordType_1": 0,
+        "recordType_2": 0,
+        "recordType_3": 0,
+        "recordType_Endless": 0,
+        "isOpenEndless": false,
+        "isAccessEndless": false,
         "isOpenLevels": [
             true,
             true,

@@ -19,9 +19,7 @@ public class MenuUI : MonoBehaviour
 
 	private void Data_Loaded()
 	{
-		//print("загрузил, ебать");
-
-		//print(YG.YandexGame.savesData.gameData);
+		UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
 	}
 
 	// Update is called once per frame
@@ -36,8 +34,17 @@ public class MenuUI : MonoBehaviour
 //#if UNITY_EDITOR
 		if (Input.GetKeyDown(KeyCode.H))
 		{
-			GameData.Instance.countBalls += 100;
+			print("шта");
+			Score.countBallsTotal += 100;
+			//GameData.Instance.countBalls += 100;
 		}
-//#endif
+
+		if (Input.GetKeyDown(KeyCode.R))
+		{
+			PlayerPrefs.DeleteAll();
+			YG.YandexGame.savesData.gameData = new GameData();
+			GameData.Instance.Save();
+		}
+		//#endif
 	}
 }
