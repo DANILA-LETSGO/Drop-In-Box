@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-	//public List<BtnLevel> btnLevels = new List<BtnLevel>();
+
 	public BtnLevel[] btnLevels;
 	public BtnLevel btnEndless;
 	public int originPrice;
@@ -15,58 +15,143 @@ public class LevelManager : MonoBehaviour {
 	public static bool[] isAccessLevels;
 	public Text txt_Score;
 
-	public static int multiplierPrice {
-		get { 
-			if (!PlayerPrefs.HasKey ("multiplier")) {
+	public static int multiplierPrice
+	{
+#if UNITY_ANDROID
+		get
+		{
+			if (!PlayerPrefs.HasKey("multiplier"))
+			{
 				return 1;
 			}
-			return PlayerPrefs.GetInt ("multiplier");
+			return PlayerPrefs.GetInt("multiplier");
 		}
-		set { 
-			PlayerPrefs.SetInt ("multiplier", value);
-			PlayerPrefs.Save ();
+		set
+		{
+			PlayerPrefs.SetInt("multiplier", value);
+			PlayerPrefs.Save();
 		}
+#endif
+
+#if UNITY_WEBGL
+		get
+		{
+			if (GameData.Instance != null)
+				return GameData.Instance.multiplierPrice;
+			else
+				return 1;
+		}
+		set
+		{
+			GameData.Instance.multiplierPrice = value;
+			GameData.Instance.Save();
+		}
+#endif
 	}
 
-	public static bool isOpenEndless {
-		get { 
-			if (!PlayerPrefs.HasKey ("openEndless")) {
+	public static bool IsOpenEndless
+	{
+#if UNITY_ANDROID
+		get
+		{
+			if (!PlayerPrefs.HasKey("openEndless"))
+			{
 				return false;
 			}
-			return bool.Parse(PlayerPrefs.GetString ("openEndless"));
+			return bool.Parse(PlayerPrefs.GetString("openEndless"));
 		}
-		set { 
-			PlayerPrefs.SetString ("openEndless", value.ToString());
-			PlayerPrefs.Save ();
+		set
+		{
+			PlayerPrefs.SetString("openEndless", value.ToString());
+			PlayerPrefs.Save();
 		}
+#endif
+
+#if UNITY_WEBGL
+		get
+		{
+			if (GameData.Instance != null)
+				return GameData.Instance.isOpenEndless;
+			else
+				return false;
+		}
+		set
+		{
+			GameData.Instance.isOpenEndless = value;
+			GameData.Instance.Save();
+		}
+#endif
 	}
-	public static bool isAccessEndless {
-		get { 
-			if (!PlayerPrefs.HasKey ("accessEndless")) {
+
+	public static bool IsAccessEndless
+	{
+#if UNITY_ANDROID
+		get
+		{
+			if (!PlayerPrefs.HasKey("accessEndless"))
+			{
 				return false;
 			}
-			return bool.Parse(PlayerPrefs.GetString ("accessEndless"));
+			return bool.Parse(PlayerPrefs.GetString("accessEndless"));
 		}
-		set { 
-			PlayerPrefs.SetString ("accessEndless", value.ToString());
-			PlayerPrefs.Save ();
+		set
+		{
+			PlayerPrefs.SetString("accessEndless", value.ToString());
+			PlayerPrefs.Save();
 		}
+#endif
+
+#if UNITY_WEBGL
+		get
+		{
+			if (GameData.Instance != null)
+				return GameData.Instance.isAccessEndless;
+			else
+				return false;
+		}
+		set
+		{
+			GameData.Instance.isAccessEndless = value;
+			GameData.Instance.Save();
+		}
+#endif
 	}
 
 
-	public static int indexLastPlayLevel {
-		get { 
-			if (!PlayerPrefs.HasKey ("lastLevel")) {
+	public static int indexLastPlayLevel
+	{
+#if UNITY_ANDROID
+		get
+		{
+			if (!PlayerPrefs.HasKey("lastLevel"))
+			{
 				return 0;
 			}
-			return PlayerPrefs.GetInt ("lastLevel");
+			return PlayerPrefs.GetInt("lastLevel");
 		}
-		set { 
-			PlayerPrefs.SetInt ("lastLevel", value);
-			PlayerPrefs.Save ();
+		set
+		{
+			PlayerPrefs.SetInt("lastLevel", value);
+			PlayerPrefs.Save();
 		}
+#endif
+
+#if UNITY_WEBGL
+		get
+		{
+			if (GameData.Instance != null)
+				return GameData.Instance.indexLastPlayedLevel;
+			else
+				return 0;
+		}
+		set
+		{
+			GameData.Instance.indexLastPlayedLevel = value;
+			GameData.Instance.Save();
+		}
+#endif
 	}
-	//public static LevelManager instance;
+	
 
 
 	void Start () {
@@ -113,11 +198,11 @@ public class LevelManager : MonoBehaviour {
 			}
 			btnLevels [i].txt_Price.text = (originPrice * multiplierPrice).ToString ();
 		}
-		if (isAccessEndless == true) {
+		if (IsAccessEndless == true) {
 			btnEndless.iconLock.gameObject.SetActive (false);
 			btnEndless.txt_Price.gameObject.SetActive (true);
 			btnEndless.txt_Price.text = (originPrice * (multiplierPrice*2)).ToString();
-			if (isOpenEndless == true) {
+			if (IsOpenEndless == true) {
 				btnEndless.txt_Price.gameObject.SetActive (false);
 				btnEndless.iconLevel.enabled = true;
 			}
@@ -128,10 +213,10 @@ public class LevelManager : MonoBehaviour {
 	public void SelectLevel(int levelNumber){
 		if (levelNumber == -1) {
 			
-			if (isAccessEndless == true && Score.countBallsTotal >= originPrice * (multiplierPrice * 2) && isOpenEndless == false) {
-				isOpenEndless = true;
+			if (IsAccessEndless == true && Score.countBallsTotal >= originPrice * (multiplierPrice * 2) && IsOpenEndless == false) {
+				IsOpenEndless = true;
 				Score.countBallsTotal -= originPrice * (multiplierPrice * 2);
-			} else if (isOpenEndless == true) {
+			} else if (IsOpenEndless == true) {
 				indexLastPlayLevel = levelNumber;
 				SceneManager.LoadScene ("Level Endless");
 			}
@@ -174,7 +259,7 @@ public class LevelManager : MonoBehaviour {
 					}
 				}
 				if (isOpenAllLevel == true) {
-					isAccessEndless = true;
+					IsAccessEndless = true;
 				}
 				//------------------------------------------------------------------------
 
@@ -198,42 +283,81 @@ public class LevelManager : MonoBehaviour {
 	}
 
 
-	public static void LoadData(){
-		if (!PlayerPrefs.HasKey ("levels"))
+	public static void LoadData()
+	{
+#if UNITY_ANDROID
+		if (!PlayerPrefs.HasKey("levels"))
 			return;
-		string strLevels = PlayerPrefs.GetString ("levels");
+		string strLevels = PlayerPrefs.GetString("levels");
 		if (strLevels.Length == 0)
 			return;
-		string[] itemsLevels = strLevels.Split (new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-		//string[] itemsCompleted = strCompl.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-
-		for (int i = 0; i < itemsLevels.Length; i++) {
-			isOpenLevels [i] = bool.Parse (itemsLevels [i]);
+		string[] itemsLevels = strLevels.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
+		
+		for (int i = 0; i < itemsLevels.Length; i++)
+		{
+			isOpenLevels[i] = bool.Parse(itemsLevels[i]);
 		}
 
-		string strAccess = PlayerPrefs.GetString ("access");
+		string strAccess = PlayerPrefs.GetString("access");
 
-		string[] itemsAccess = strAccess.Split (new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-		//string[] itemsCompleted = strCompl.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-
-		for (int i = 0; i < itemsAccess.Length; i++) {
-			isAccessLevels [i] = bool.Parse (itemsAccess [i]);
+		string[] itemsAccess = strAccess.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
+		
+		for (int i = 0; i < itemsAccess.Length; i++)
+		{
+			isAccessLevels[i] = bool.Parse(itemsAccess[i]);
 		}
+#endif
+
+#if UNITY_WEBGL
+		var data = GameData.Instance;
+		if (GameData.Instance != null)
+        {
+            for (int i = 0; i < data.isOpenLevels.Count; i++)
+            {
+				isOpenLevels[i] = data.isOpenLevels[i];
+			}
+            for (int i = 0; i < data.isAccessLevels.Count; i++)
+            {
+				isAccessLevels[i] = data.isAccessLevels[i];
+			}
+        }
+			
+#endif
 	}
 
-	public static void SaveData(){
+	public static void SaveData()
+	{
+#if UNITY_ANDROID
 		string saveLevel = "";
 		string saveAccess = "";
-		for (int i = 0; i < isOpenLevels.Length; i++) {
-			saveLevel += string.Format ("{0};", isOpenLevels [i]);
+		for (int i = 0; i < isOpenLevels.Length; i++)
+		{
+			saveLevel += string.Format("{0};", isOpenLevels[i]);
 		}
-		for (int i = 0; i < isAccessLevels.Length; i++) {
-			saveAccess += string.Format ("{0};", isAccessLevels [i]);
+		for (int i = 0; i < isAccessLevels.Length; i++)
+		{
+			saveAccess += string.Format("{0};", isAccessLevels[i]);
 		}
 
 		PlayerPrefs.SetString("levels", saveLevel);
-		PlayerPrefs.SetString ("access", saveAccess);
+		PlayerPrefs.SetString("access", saveAccess);
+		PlayerPrefs.Save();
+#endif
 
-		PlayerPrefs.Save ();
+#if UNITY_WEBGL
+		var data = GameData.Instance;
+		data.isOpenLevels = new List<bool>();
+		data.isAccessLevels = new List<bool>();
+		for (int i = 0; i < isOpenLevels.Length; i++)
+		{
+			data.isOpenLevels.Add(isOpenLevels[i]);
+		}
+		for (int i = 0; i < isAccessLevels.Length; i++)
+		{
+			data.isAccessLevels.Add(isAccessLevels[i]);
+		}
+
+		data.Save();
+#endif
 	}
 }

@@ -1,32 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
-public class Score : MonoBehaviour {
 
+public class Score : MonoBehaviour
+{
 	public static int countBalls;
-	public static int countBallsTotal {
-		get { 
-			if (!PlayerPrefs.HasKey ("score")) {
+	public static int countBallsTotal
+	{
+		get
+		{
+#if UNITY_ANDROID
+			if (!PlayerPrefs.HasKey("score"))
+			{
 				return 0;
 			}
-			return PlayerPrefs.GetInt ("score");
+			return PlayerPrefs.GetInt("score");
+#endif
+
+#if UNITY_WEBGL
+			if (GameData.Instance != null)
+				return GameData.Instance.countBalls;
+			else
+				return 0;
+#endif
 		}
-		set { 
-			PlayerPrefs.SetInt ("score", value);
-			PlayerPrefs.Save ();
+		set
+		{
+#if UNITY_ANDROID
+			PlayerPrefs.SetInt("score", value);
+			PlayerPrefs.Save();
+#endif
+
+#if UNITY_WEBGL
+			GameData.Instance.countBalls = value;
+
+			if (saveTimer > 30)
+			{
+				saveTimer = 0;
+
+				GameData.Instance.Save();
+			}
+#endif
 		}
 	}
+
 	public Text text;
 
-	// Use this for initialization
-	void Start () {
+	static float saveTimer;
+
+	void Start()
+	{
 		countBalls = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		text.text = countBalls.ToString ();
+
+
+	void Update()
+	{
+		saveTimer += Time.deltaTime;
+
+		text.text = countBalls.ToString();
+	}
+
+    private void OnDestroy()
+    {
+		GameData.Instance.Save();
 	}
 }
