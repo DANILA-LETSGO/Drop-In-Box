@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 	{
 		get
 		{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 			if (!PlayerPrefs.HasKey("score"))
 			{
 				return 0;
@@ -28,7 +28,7 @@ public class Score : MonoBehaviour
 		}
 		set
 		{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 			PlayerPrefs.SetInt("score", value);
 			PlayerPrefs.Save();
 #endif

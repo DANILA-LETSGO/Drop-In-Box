@@ -9,7 +9,7 @@ public class RecordHolder : MonoBehaviour {
 
     public static int RecordType_1
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         get
         {
             if (!PlayerPrefs.HasKey("record_1"))
@@ -43,7 +43,7 @@ public class RecordHolder : MonoBehaviour {
 
     public static int RecordType_2
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         get
         {
             if (!PlayerPrefs.HasKey("record_2"))
@@ -77,7 +77,7 @@ public class RecordHolder : MonoBehaviour {
 
     public static int RecordType_3
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         get
         {
             if (!PlayerPrefs.HasKey("record_3"))
@@ -111,7 +111,7 @@ public class RecordHolder : MonoBehaviour {
 
     public static int RecordType_Endless
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         get
         {
             if (!PlayerPrefs.HasKey("record_endless"))

@@ -1,5 +1,5 @@
 {
-    "idSave": 58,
+    "idSave": 82,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -11,11 +11,12 @@
         false
     ],
     "gameData": {
-        "countBalls": 107,
-        "indexLastPlayedLevel": 5,
-        "multiplierPrice": 5,
-        "recordType_1": 3,
-        "recordType_2": 4,
+        "countBalls": 50,
+        "indexLastPlayedLevel": 0,
+        "multiplierPrice": 2,
+        "multiplierBonus": 1,
+        "recordType_1": 0,
+        "recordType_2": 0,
         "recordType_3": 0,
         "recordType_Endless": 0,
         "isOpenEndless": false,
@@ -23,10 +24,10 @@
         "isOpenLevels": [
             true,
             true,
-            true,
-            true,
-            true,
-            true,
+            false,
+            false,
+            false,
+            false,
             false,
             false,
             false,
@@ -43,14 +44,18 @@
             true,
             true,
             true,
-            true,
-            true,
-            true,
-            true,
-            true,
             false,
             false,
             false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ],
+        "isOpenBonus": [
             false,
             false
         ]

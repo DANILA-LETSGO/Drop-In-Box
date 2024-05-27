@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusManager : MonoBehaviour {
-
+public class BonusManager : MonoBehaviour
+{
     public int originPrice = 8000;
     public BtnBonus[] btnBonuses;
-	public static bool[] isOpenBonus;
-	public static int price = 2500;
+    public static bool[] isOpenBonus;
+    public static int price = 2500;
 
-	public static int multiplierPrice
+    public static int multiplierPrice
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         get
         {
             if (!PlayerPrefs.HasKey("multiplierB"))
@@ -40,48 +40,50 @@ public class BonusManager : MonoBehaviour {
 #endif
     }
 
-	// Use this for initialization
-	void Start () {
-		price = originPrice;
+    public void Init()
+    {
+        price = originPrice;
         isOpenBonus = new bool[btnBonuses.Length];
-		LoadData ();
-		UpdateBonusView ();
+        LoadData();
+        UpdateBonusView();
+    }
 
-	}
-	
-	// Update is called once per frame
-	void UpdateBonusView () {
-        for (int i = 0; i < btnBonuses.Length; i++) {
+    void UpdateBonusView()
+    {
+        for (int i = 0; i < btnBonuses.Length; i++)
+        {
             if (isOpenBonus[i] == true)
             {
                 btnBonuses[i].iconUsed.gameObject.SetActive(true);
                 btnBonuses[i].iconBonus.SetActive(true);
                 btnBonuses[i].txt_Price.gameObject.SetActive(false);
             }
-            else {
+            else
+            {
                 btnBonuses[i].iconUsed.gameObject.SetActive(false);
                 btnBonuses[i].iconBonus.SetActive(false);
                 btnBonuses[i].txt_Price.gameObject.SetActive(true);
-				btnBonuses [i].txt_Price.text = (originPrice*multiplierPrice).ToString ();
+                btnBonuses[i].txt_Price.text = (originPrice * multiplierPrice).ToString();
             }
         }
-		SaveData ();
-	}
-
-    public void SelectBonus(int numberBonus) {
-		if (isOpenBonus[numberBonus] == false && Score.countBallsTotal >= originPrice*multiplierPrice) {
-            isOpenBonus[numberBonus] = true;
-
-			Score.countBallsTotal -= originPrice;
-			multiplierPrice++;
-        }
-		UpdateBonusView ();
     }
 
+    public void SelectBonus(int numberBonus)
+    {
+        if (isOpenBonus[numberBonus] == false && Score.countBallsTotal >= originPrice * multiplierPrice)
+        {
+            isOpenBonus[numberBonus] = true;
+
+            Score.countBallsTotal -= originPrice;
+            multiplierPrice++;
+        }
+        SaveData();
+        UpdateBonusView();
+    }
 
     public static void LoadData()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         isOpenBonus = new bool[2];//new bool[itemsBonuses.Length]; TODO
 		if (!PlayerPrefs.HasKey ("bonuses")) {
 			
@@ -101,7 +103,8 @@ public class BonusManager : MonoBehaviour {
 
 #if UNITY_WEBGL
         var data = GameData.Instance;
-        for (int i = 0; i < isOpenBonus.Length; i++)
+        //isOpenBonus = new bool[data.isOpenBonus.Count];
+        for (int i = 0; i < data.isOpenBonus.Count; i++)
         {
             isOpenBonus[i] = data.isOpenBonus[i];
         }
@@ -111,7 +114,7 @@ public class BonusManager : MonoBehaviour {
 
     public static void SaveData()
     {
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
         string saveBonuses = "";
 
         for (int i = 0; i < isOpenBonus.Length; i++)

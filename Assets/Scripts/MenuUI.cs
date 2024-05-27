@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class MenuUI : MonoBehaviour
 {
-
-
+	[SerializeField] BonusManager bonusManager;
 	public GameObject shop;
 	public GameObject menu;
 
@@ -15,6 +14,7 @@ public class MenuUI : MonoBehaviour
 #if UNITY_WEBGL
 		YG.YandexGame.GetDataEvent += Data_Loaded;
 #endif
+		bonusManager.Init();
 	}
 
 	private void Data_Loaded()

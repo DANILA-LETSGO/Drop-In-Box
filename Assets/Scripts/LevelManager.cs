@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static int multiplierPrice
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		get
 		{
 			if (!PlayerPrefs.HasKey("multiplier"))
@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static bool IsOpenEndless
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		get
 		{
 			if (!PlayerPrefs.HasKey("openEndless"))
@@ -85,7 +85,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static bool IsAccessEndless
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		get
 		{
 			if (!PlayerPrefs.HasKey("accessEndless"))
@@ -120,7 +120,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static int indexLastPlayLevel
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		get
 		{
 			if (!PlayerPrefs.HasKey("lastLevel"))
@@ -285,7 +285,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static void LoadData()
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		if (!PlayerPrefs.HasKey("levels"))
 			return;
 		string strLevels = PlayerPrefs.GetString("levels");
@@ -327,7 +327,7 @@ public class LevelManager : MonoBehaviour {
 
 	public static void SaveData()
 	{
-#if UNITY_ANDROID
+#if UNITY_ANDROID || UNITY_STANDALONE
 		string saveLevel = "";
 		string saveAccess = "";
 		for (int i = 0; i < isOpenLevels.Length; i++)
