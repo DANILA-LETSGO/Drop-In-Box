@@ -1,0 +1,58 @@
+{
+    "idSave": 58,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "gameData": {
+        "countBalls": 107,
+        "indexLastPlayedLevel": 5,
+        "multiplierPrice": 5,
+        "recordType_1": 3,
+        "recordType_2": 4,
+        "recordType_3": 0,
+        "recordType_Endless": 0,
+        "isOpenEndless": false,
+        "isAccessEndless": false,
+        "isOpenLevels": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+        ],
+        "isAccessLevels": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false
+        ]
+    }
+}

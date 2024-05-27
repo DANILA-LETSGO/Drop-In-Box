@@ -7,8 +7,8 @@ public class BtnPlay : MonoBehaviour {
 
 
 	public void OnButtonPlay () {
-		string nameScene = string.Empty;
-		if (LevelManager.indexLastPlayLevel == -1) {
+        string nameScene;
+        if (LevelManager.indexLastPlayLevel == -1) {
 			nameScene = "Level Endless";
 		} else {
 			nameScene = "Level " + (LevelManager.indexLastPlayLevel + 1).ToString ();

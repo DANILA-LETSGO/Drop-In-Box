@@ -9,18 +9,36 @@ public class BonusManager : MonoBehaviour {
 	public static bool[] isOpenBonus;
 	public static int price = 2500;
 
-	public static int multiplierPrice {
-		get { 
-			if (!PlayerPrefs.HasKey ("multiplierB")) {
-				return 1;
-			}
-			return PlayerPrefs.GetInt ("multiplierB");
-		}
-		set { 
-			PlayerPrefs.SetInt ("multiplierB", value);
-			PlayerPrefs.Save ();
-		}
-	}
+	public static int multiplierPrice
+    {
+#if UNITY_ANDROID
+        get
+        {
+            if (!PlayerPrefs.HasKey("multiplierB"))
+            {
+                return 1;
+            }
+            return PlayerPrefs.GetInt("multiplierB");
+        }
+        set
+        {
+            PlayerPrefs.SetInt("multiplierB", value);
+            PlayerPrefs.Save();
+        }
+#endif
+
+#if UNITY_WEBGL
+        get
+        {
+            return GameData.Instance.multiplierBonus;
+        }
+        set
+        {
+            GameData.Instance.multiplierBonus = value;
+            GameData.Instance.Save();
+        }
+#endif
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -63,7 +81,8 @@ public class BonusManager : MonoBehaviour {
 
     public static void LoadData()
     {
-		isOpenBonus = new bool[2];//new bool[itemsBonuses.Length]; TODO
+#if UNITY_ANDROID
+        isOpenBonus = new bool[2];//new bool[itemsBonuses.Length]; TODO
 		if (!PlayerPrefs.HasKey ("bonuses")) {
 			
 			return;
@@ -72,19 +91,27 @@ public class BonusManager : MonoBehaviour {
         if (strBonuses.Length == 0)
             return;
         string[] itemsBonuses = strBonuses.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-        //string[] itemsCompleted = strCompl.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
-
+        
 
         for (int i = 0; i < itemsBonuses.Length; i++)
         {
             isOpenBonus[i] = bool.Parse(itemsBonuses[i]);
         }
+#endif
 
-       
+#if UNITY_WEBGL
+        var data = GameData.Instance;
+        for (int i = 0; i < isOpenBonus.Length; i++)
+        {
+            isOpenBonus[i] = data.isOpenBonus[i];
+        }
+#endif
+
     }
 
     public static void SaveData()
     {
+#if UNITY_ANDROID
         string saveBonuses = "";
 
         for (int i = 0; i < isOpenBonus.Length; i++)
@@ -93,8 +120,16 @@ public class BonusManager : MonoBehaviour {
         }
 
         PlayerPrefs.SetString("bonuses", saveBonuses);
-       
-
         PlayerPrefs.Save();
+#endif
+
+#if UNITY_WEBGL
+        GameData.Instance.isOpenBonus = new List<bool>();
+        for (int i = 0; i < isOpenBonus.Length; i++)
+        {
+            GameData.Instance.isOpenBonus.Add(isOpenBonus[i]);
+        }
+        GameData.Instance.Save();
+#endif
     }
 }

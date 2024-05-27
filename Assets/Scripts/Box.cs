@@ -79,7 +79,7 @@ public class Box : MonoBehaviour {
 		}
 		if (col.name == "Right Stoper 2" && boxType == BoxType.Right) {
 			isClicked = false;
-			transform.position = new Vector3 (7.5f, transform.position.y, 0);
+			//transform.position = new Vector3 (7.5f, transform.position.y, 0);
 			countClicks = 0;
 		}
 		if ((col.name == "Ball" && GetComponent<SpriteRenderer> ().color == col.GetComponent<SpriteRenderer> ().color && col.GetComponent<Ball> ().isBonusBall == false) 
